@@ -1,5 +1,5 @@
 punkteImKreis :: Double -> [( Double , Double )]
-punkteImKreis k = [(a,b) | a <- [1..(k-1)], b <- [1..(k-1)]]
+punkteImKreis k = [ (x, y) | x <- [1.. k] , y <- [1.. k], sqrt (x^2 + y^2) < k ]
 
 len :: [(Double,Double)] -> Double
 len [] = 0
