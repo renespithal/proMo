@@ -1,10 +1,10 @@
 import qualified Data.Map.Strict as Mp
 
-freq :: [Int] -> Mp.Map Int Int
+freq :: Ord a => [a] -> Mp.Map a Int
 freq []     = Mp.empty
 freq (x:xs) = helper x (freq xs)
 
-helper :: Int -> Mp.Map Int Int -> Mp.Map Int Int
+helper :: Ord a => a -> Mp.Map a Int -> Mp.Map a Int
 helper x firstMap = finalMap
    where
    finalMap = Mp.insertWith (+) x 1 firstMap
